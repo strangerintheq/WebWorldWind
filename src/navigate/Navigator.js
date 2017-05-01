@@ -112,6 +112,8 @@ define([
             // modelview matrix and before computing the near clip distance. The far clip distance depends on the
             // modelview matrix, and the near clip distance depends on the far clip distance.
             this.farDistance = WWMath.horizonDistanceForGlobeRadius(globeRadius, eyePos.altitude);
+            // clipping bugfix https://github.com/NASAWorldWind/WebWorldWind/issues/105
+            this.farDistance += 1437568.7253136805; //<-- add this line    
             if (this.farDistance < 1e3)
                 this.farDistance = 1e3;
 
