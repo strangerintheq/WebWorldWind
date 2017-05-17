@@ -138,7 +138,7 @@ define([
                 }
             }
 
-            if (!this.styleIdentifier) {
+            if (!this.styleIdentifier && layerCaps.style) {
                 for (i = 0; i < layerCaps.style.length; i++) {
                     if (layerCaps.style[i].isDefault) {
                         this.styleIdentifier = layerCaps.style[i].identifier;
